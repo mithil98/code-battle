@@ -1,0 +1,30 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      PISTON_URL: http://piston:2000
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@codebattle.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+    volumes:
+      - app-data:/data
+    depends_on:
+      - piston
+    restart: unless-stopped
+
+  # Free, self-hosted code execution API: https://github.com/engineer-man/piston
+  # Not published to the host: only the app talks to it.
+  piston:
+    image: ghcr.io/engineer-man/piston
+    privileged: true
+    volumes:
+      - piston-packages:/piston/packages
+    tmpfs:
+      - /tmp:exec
+    restart: unless-stopped
+
+volumes:
+  app-data:
+  piston-packages:

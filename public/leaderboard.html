@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard · Code Battle</title>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div class="spread">
+        <h1 id="board-title">Live rankings</h1>
+        <span id="board-status"></span>
+      </div>
+      <p class="muted" id="board-sub">Scores update every 10 seconds.</p>
+    </div>
+
+    <div id="podium"></div>
+
+    <section class="panel">
+      <div class="panel-head">
+        <label class="visually-hidden" for="search">Search participants</label>
+        <input id="search" type="search" autocomplete="off" placeholder="Search by name or college" style="max-width:320px">
+        <span class="muted" id="count" style="font-size:.85rem"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead id="thead"></thead>
+          <tbody id="tbody">
+            <tr><td colspan="7"><span class="skeleton" style="width:60%"></span></td></tr>
+            <tr><td colspan="7"><span class="skeleton" style="width:45%"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/js/leaderboard.js"></script>
+</body>
+</html>

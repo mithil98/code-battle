@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Battle</title>
+  <meta name="description" content="Code Battle online hackathon: quiz, coding, debugging and final rounds with live rankings.">
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <h1 class="reveal">Four rounds. One <em>leaderboard</em>.</h1>
+        <p class="hero-sub reveal" style="--i:1">Answer fast, write clean code, fix broken programs and climb the live rankings across four timed rounds.</p>
+        <div class="hero-cta reveal" style="--i:2" id="hero-cta">
+          <a class="btn btn-primary btn-lg" href="/login.html#register">Join the battle <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn btn-ghost btn-lg" href="/leaderboard.html">View rankings</a>
+        </div>
+      </div>
+
+      <section class="panel live-card reveal" style="--i:3" aria-labelledby="live-title">
+        <div class="panel-head">
+          <h2 id="live-title" class="h3" style="font-size:1rem">Live rankings</h2>
+          <span id="live-status"><span class="badge">Loading</span></span>
+        </div>
+        <ol id="live-list" aria-live="polite">
+          <li><span class="skeleton" style="width:20px"></span><span class="skeleton"></span><span class="skeleton" style="width:40px"></span></li>
+          <li><span class="skeleton" style="width:20px"></span><span class="skeleton"></span><span class="skeleton" style="width:40px"></span></li>
+          <li><span class="skeleton" style="width:20px"></span><span class="skeleton"></span><span class="skeleton" style="width:40px"></span></li>
+        </ol>
+        <div class="live-foot"><span id="live-count"></span><span id="live-updated"></span></div>
+      </section>
+    </section>
+
+    <section class="wrap section" aria-labelledby="rounds-title">
+      <h2 id="rounds-title">Four rounds, each one harder</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="wrap section" aria-labelledby="scoring-title">
+      <h2 id="scoring-title">How scoring works</h2>
+      <div class="rules">
+        <div class="rule feature">
+          <i class="ph ph-lightning" aria-hidden="true"></i>
+          <h3>Scored on submit</h3>
+          <p class="muted">Your code runs in a sandbox against hidden tests the moment you submit. Every passing test earns its share of the points.</p>
+        </div>
+        <div class="rule">
+          <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+          <h3>Best attempt counts</h3>
+          <p class="muted">Resubmit as often as the timer allows. Only your highest score on each problem is kept.</p>
+        </div>
+        <div class="rule">
+          <i class="ph ph-flag-checkered" aria-hidden="true"></i>
+          <h3>Top scorers advance</h3>
+          <p class="muted">When a round ends, the top participants qualify for the next one. Ties at the cut-off all advance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap spread">
+      <span>Code Battle online hackathon portal</span>
+      <span class="row"><a href="/leaderboard.html">Leaderboard</a><a href="/login.html">Log in</a></span>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/index.js"></script>
+</body>
+</html>

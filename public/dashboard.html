@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Code Battle</title>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1 id="greeting">Your battle</h1>
+      <p class="muted">Rounds open when the organizers start them. This page refreshes on its own.</p>
+    </div>
+
+    <div class="stats" aria-label="Your standing">
+      <div class="stat"><span class="label">Total score</span><span class="value" id="stat-total">-</span></div>
+      <div class="stat"><span class="label">Overall rank</span><span class="value" id="stat-rank">-</span></div>
+      <div class="stat"><span class="label">Rounds played</span><span class="value" id="stat-played">-</span></div>
+    </div>
+
+    <div class="dash-grid" style="margin-top:24px">
+      <section class="panel" aria-labelledby="rounds-h">
+        <div class="panel-head"><h2 id="rounds-h">Rounds</h2></div>
+        <ul class="round-list" id="rounds">
+          <li class="round-item"><span class="skeleton" style="width:36px;height:36px;border-radius:50%"></span><span class="stack" style="gap:8px"><span class="skeleton" style="width:40%"></span><span class="skeleton" style="width:70%"></span></span></li>
+          <li class="round-item"><span class="skeleton" style="width:36px;height:36px;border-radius:50%"></span><span class="stack" style="gap:8px"><span class="skeleton" style="width:40%"></span><span class="skeleton" style="width:70%"></span></span></li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="recent-h">
+        <div class="panel-head"><h2 id="recent-h">Recent submissions</h2></div>
+        <div id="recent"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

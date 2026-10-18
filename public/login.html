@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Code Battle</title>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <main class="auth">
+    <aside class="auth-aside">
+      <h2>How Code Battle runs</h2>
+      <ol>
+        <li>Quiz Battle: multiple choice fundamentals</li>
+        <li>Coding Battle: solve problems from scratch</li>
+        <li>Debugging Battle: fix broken programs</li>
+        <li>Final Battle: advanced problems for finalists</li>
+      </ol>
+      <p class="muted">Each round is timed. The top scorers of each round qualify for the next.</p>
+    </aside>
+
+    <div class="auth-main">
+      <div class="auth-card">
+        <div class="tabs" role="tablist" aria-label="Account">
+          <button type="button" role="tab" id="tab-login" aria-controls="login-form" aria-selected="true">Log in</button>
+          <button type="button" role="tab" id="tab-register" aria-controls="register-form" aria-selected="false">Register</button>
+        </div>
+
+        <form id="login-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+          <h1>Welcome back</h1>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn btn-primary btn-lg" type="submit">Log in</button>
+        </form>
+
+        <form id="register-form" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+          <h1>Join the battle</h1>
+          <div class="field">
+            <label for="reg-name">Full name</label>
+            <input id="reg-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60">
+          </div>
+          <div class="field">
+            <label for="reg-email">Email</label>
+            <input id="reg-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+          </div>
+          <div class="field">
+            <label for="reg-college">College or organization <span class="muted">(optional)</span></label>
+            <input id="reg-college" name="college" type="text" autocomplete="organization" maxlength="100">
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="pw-hint">
+            <span class="hint" id="pw-hint">At least 8 characters.</span>
+          </div>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn btn-primary btn-lg" type="submit">Create account</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

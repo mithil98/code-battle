@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round · Code Battle</title>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <div class="round-bar" id="round-bar" hidden>
+    <div class="wrap round-bar-inner">
+      <a class="icon-btn" href="/dashboard.html" aria-label="Back to dashboard"><i class="ph ph-arrow-left" aria-hidden="true"></i></a>
+      <h1 id="round-title"></h1>
+      <span class="muted" id="progress"></span>
+      <span class="timer" id="timer" role="timer" aria-label="Time left"><i class="ph ph-timer" aria-hidden="true"></i><span id="timer-text">--:--</span></span>
+    </div>
+  </div>
+
+  <main class="wrap" id="app" style="padding-bottom:48px">
+    <div class="intro panel panel-pad stack">
+      <span class="skeleton" style="width:50%;height:28px"></span>
+      <span class="skeleton" style="width:90%"></span>
+      <span class="skeleton" style="width:70%"></span>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script type="module" src="/js/round.js"></script>
+</body>
+</html>

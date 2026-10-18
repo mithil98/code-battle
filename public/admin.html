@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Code Battle</title>
+  <meta name="theme-color" content="#f5f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar" id="nav"></header>
+
+  <main class="wrap">
+    <div class="page-head">
+      <div class="spread"><h1>Control room</h1><span id="runner"><span class="badge">Checking code runner</span></span></div>
+      <p class="muted">Start and end rounds, manage questions, review submissions and publish results.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Admin sections" style="margin-bottom:20px">
+      <button type="button" role="tab" aria-selected="true" data-tab="rounds">Rounds</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="questions">Questions</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="submissions">Submissions</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="participants">Participants</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="results">Results</button>
+    </div>
+
+    <section id="tab-rounds" class="admin-grid" role="tabpanel"></section>
+    <section id="tab-questions" class="admin-grid" role="tabpanel" hidden></section>
+    <section id="tab-submissions" class="admin-grid" role="tabpanel" hidden></section>
+    <section id="tab-participants" class="admin-grid" role="tabpanel" hidden></section>
+    <section id="tab-results" class="admin-grid" role="tabpanel" hidden></section>
+  </main>
+
+  <dialog id="q-dialog" aria-labelledby="q-dialog-title">
+    <form id="q-form" method="dialog" novalidate>
+      <div class="panel-head"><h2 id="q-dialog-title">Question</h2><button class="icon-btn" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button></div>
+      <div class="dialog-body" id="q-fields"></div>
+      <div class="dialog-foot">
+        <p class="form-error" role="alert" hidden style="margin-right:auto"></p>
+        <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+        <button class="btn btn-primary" type="submit">Save question</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>
